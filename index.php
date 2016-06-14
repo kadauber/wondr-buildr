@@ -46,15 +46,6 @@
 	    printWonderRow($row);
 	}
 
-	// Print the last wonder added
-	if (isset($_POST['submit'])) {
-	    $name = $_POST['name'];
-	    $owner = $_POST['owner'];
-	    $axiom = $_POST['axiom'];
-	    $rank = $_POST['rank'];
-	    printWonderRow(array($name, $owner, $axiom, $rank));
-	}
-
         // Take a row of the table in FETCH_NUM mode and print it
         // as a table row
         function printWonderRow($row) {
