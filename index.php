@@ -36,7 +36,7 @@
     <?php
 
 	// Get existing wonders from database
-	$statement = $conn->prepare("select Name, Owner, Axiom, Rank from Wonders order by Owner");
+	$statement = $conn->prepare("select Name, Owner, Axiom, Rank from Wonders order by ID");
 	$statement->execute();
 	$statement->setFetchMode(PDO::FETCH_NUM);
 	$result = $statement->fetchAll();
@@ -67,7 +67,7 @@
 
     ?>
 
-    <form method="post"><tr>
+    <form action="submit_wonder.php" method="post"><tr>
 	<td><input type="text" name="name" placeholder="Name"></td>
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
@@ -95,6 +95,6 @@
     </tr></form> 
     </table>
     <br>
-    <p>And maybe, just maybe, you'll be able to add your own wonders to the list. You never know.</p>
+    <p>Use 'Enter' to submit a wonder.</p>
 </body>
 </html>
