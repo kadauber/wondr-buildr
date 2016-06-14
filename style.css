@@ -6,20 +6,21 @@ body {
 }
 
 table {
-  border-radius: 25px;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 10px 0px;
   margin: auto;
   background-color: #b09060;
+  border-spacing: 0px;
 }
 
-tr{
+td,th {
+  padding: 5px 10px 5px 10px;
   text-align: left;
 }
 
-td {
-  padding-right: 20px;
-  text-align: left;
-}
+tr:nth-child(even) {background: #bf9f6f}
+
+tr.entry:nth-child(even) {background: inherit}
 
 div.wrapper{
   position: absolute;
@@ -30,4 +31,23 @@ div.wrapper{
   left: 50%;
   transform: translate(-50%,-50%);
   background-color: #d0b070
+}
+
+::-webkit-input-placeholder{
+  color: #b08020;
+}
+
+input[type=text], select {
+    width: 100%;
+    border: 2px solid #704000;
+    border-radius: 6px;
+    padding: 3px;
+    margin-top: 10px;
+    outline: none;
+    background-color: #e0c090;
+    color: #503000;
+}
+
+input[type=text]:focus, select:focus {
+    background-color: #f0d0a0;
 }

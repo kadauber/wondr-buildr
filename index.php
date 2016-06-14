@@ -53,14 +53,27 @@
         function printWonderRow($row) {
             echo "<tr>";
             foreach ($row as $field) {
-                echo "<td>" . $field . "</td>";
+                echo "<td>" . dotParse($field) . "</td>";
             }
             echo "</tr>";
         }
 
+        function dotParse($field){
+          if(is_numeric($field)){
+            $count = intval($field);
+            $dots = '';
+            for($i=0; $i<$count; $i++){
+              $dots = $dots.'●';
+            }
+            return $dots;
+          }else{
+            return $field;
+          }
+        }
+
     ?>
 
-    <form action="submit_wonder.php" method="post"><tr>
+    <form action="submit_wonder.php" method="post"><tr class="entry">
 	<td><input type="text" name="name" placeholder="Name"></td>
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
