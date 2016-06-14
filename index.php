@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Wondr Buildr</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="font-family:Courier New">
+<body>
+  <div class="wrapper">
     <h1>Wondr Buildr</h1>
     <p>Welcome to Wondr Buildr. Let's build some wonders.</p>
     <?php
@@ -25,8 +27,8 @@
 
     ?>
 
-    <table style="padding:20px">
-	<tr style="text-align:left">
+    <table>
+	<tr>
 	    <th>Name</th>
 	    <th>Owner</th>
 	    <th>Axiom</th>
@@ -82,9 +84,10 @@
 		<option value="5">5</option>
 	    </select>
 	</td>
-    </tr></form> 
+    </tr></form>
     </table>
     <br>
     <p>And maybe, just maybe, you'll be able to add your own wonders to the list. You never know.</p>
+  </div>
 </body>
 </html>
