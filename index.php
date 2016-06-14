@@ -38,7 +38,7 @@
     <?php
 
 	// Get existing wonders from database
-	$statement = $conn->prepare("select Name, Owner, Axiom, Rank from Wonders order by Owner");
+	$statement = $conn->prepare("select Name, Owner, Axiom, Rank from Wonders order by ID");
 	$statement->execute();
 	$statement->setFetchMode(PDO::FETCH_NUM);
 	$result = $statement->fetchAll();
@@ -77,7 +77,7 @@
 	<td><input type="text" name="name" placeholder="Name"></td>
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
-	    <select name="Axiom">
+	    <select name="axiom">
 		<option value="Apocalypsi">Apocalypsi</option>
 		<option value="Automata">Automata</option>
 		<option value="Epikrato">Epikrato</option>
@@ -89,7 +89,7 @@
 	    </select>
 	</td>
 	<td>
-	    <select name="Rank">
+	    <select name="rank">
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
@@ -97,10 +97,10 @@
 		<option value="5">5</option>
 	    </select>
 	</td>
-    </tr></form>
-    </table>
-    <br>
-    <p>And maybe, just maybe, you'll be able to add your own wonders to the list. You never know.</p>
-  </div>
+  </tr></form>
+  </table>
+  <br>
+  <p>Use 'Enter' to submit a wonder.</p>
+</div>
 </body>
 </html>
