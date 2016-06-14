@@ -1,3 +1,31 @@
+
+@keyframes falldown {
+    0% {
+      opacity: 0;
+      max-width:0%;
+      max-height:0%;
+      border-radius: 0px;
+      padding: 0px;
+    }
+    50%{
+      opacity: 1;
+      border-radius: 25px;
+      padding: 25px 50px;
+      max-height:100%;
+    }
+    100% {
+      max-width:100%;
+      max-height:100%;
+      border-radius: 25px;
+      padding: 20px 40px;
+    }
+}
+
+@keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 body {
     background-color: #d0c090;
     text-align: center;
@@ -22,15 +50,26 @@ tr:nth-child(even) {background: #bf9f6f}
 
 tr.entry:nth-child(even) {background: inherit}
 
+div.fader{
+  animation-delay: 0.25s;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
 div.wrapper{
-  position: absolute;
-  border: 2px solid #503000;
-  border-radius: 25px;
-  padding: 20px 40px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: #d0b070
+  position: absolute;
+  border: 2px solid #503000;
+  animation-name: falldown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  background-color: #d0b070;
+  white-space: nowrap;
 }
 
 ::-webkit-input-placeholder{

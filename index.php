@@ -6,6 +6,7 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="fader">
     <h1>Wondr Buildr</h1>
     <p>Welcome to Wondr Buildr. Let's build some wonders.</p>
     <?php
@@ -101,6 +102,7 @@
   </table>
   <br>
   <p>Use 'Enter' to submit a wonder.</p>
+</div>
 </div>
 </body>
 </html>
