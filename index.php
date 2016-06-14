@@ -46,6 +46,15 @@
 	    printWonderRow($row);
 	}
 
+	// Print the last wonder added
+	if (isset($_POST['submit'])) {
+	    $name = $_POST['name'];
+	    $owner = $_POST['owner'];
+	    $axiom = $_POST['axiom'];
+	    $rank = $_POST['rank'];
+	    printWonderRow(array($name, $owner, $axiom, $rank));
+	}
+
         // Take a row of the table in FETCH_NUM mode and print it
         // as a table row
         function printWonderRow($row) {
@@ -58,11 +67,11 @@
 
     ?>
 
-    <form action="submit_wonder.php" method="post"><tr>
+    <form method="post"><tr>
 	<td><input type="text" name="name" placeholder="Name"></td>
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
-	    <select name="Axiom">
+	    <select name="axiom">
 		<option value="Apocalypsi">Apocalypsi</option>
 		<option value="Automata">Automata</option>
 		<option value="Epikrato">Epikrato</option>
@@ -74,7 +83,7 @@
 	    </select>
 	</td>
 	<td>
-	    <select name="Rank">
+	    <select name="rank">
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
@@ -82,6 +91,7 @@
 		<option value="5">5</option>
 	    </select>
 	</td>
+	<td style="display:none"><input type="submit" name="submit"></td>
     </tr></form> 
     </table>
     <br>
