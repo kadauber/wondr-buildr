@@ -37,7 +37,7 @@ table {
   border-radius: 15px;
   padding: 10px 0px;
   margin: auto;
-  background-color: #b09060;
+  background-color: #a08050;
   border-spacing: 0px;
 }
 
@@ -46,9 +46,11 @@ td,th {
   text-align: left;
 }
 
-tr:nth-child(even) {background: #bf9f6f}
+tr:nth-child(odd) {background: #bf9f6f}
 
-tr.entry:nth-child(even) {background: inherit}
+tr:nth-child(even) {background: #b09060}
+
+tr.entry, tr:nth-child(1) {background: inherit}
 
 div.fader{
   animation-delay: 0.25s;
