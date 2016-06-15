@@ -110,7 +110,7 @@
 	    </select>
 	</td>
   <td>
-    <input type="submit" value="Create"/>
+    <input type="submit" name="submit" value="Create"/>
   </td>
   </tr></form>
   </table>
