@@ -7,6 +7,7 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="fader">
     <h1>Wondr Buildr</h1>
     <p>Welcome to Wondr Buildr. Let's build some wonders.</p>
     <?php
@@ -56,6 +57,10 @@
             foreach ($row as $field) {
                 echo "<td>" . dotParse($field) . "</td>";
             }
+            echo "<td style='text-align:center;'>
+              <a class='textDelete' onclick='deleteWonder()'>&#10005</a>
+              <a class='textEdit' onclick='editWonder()'>&#9998</a>
+              </td>";
             echo "</tr>";
         }
 
@@ -73,6 +78,12 @@
         }
 
     ?>
+
+    <script>
+      //Placeholder
+      function deleteWonder() {window.alert("Wonder Deleted");}
+      function deleteWonder() {window.alert("Wonder Edited");}
+    </script>
 
     <form action="submit_wonder.php" method="post"><tr class="entry">
 	<td><input type="text" name="name" placeholder="Name"></td>
@@ -98,10 +109,13 @@
 		<option value="5">5</option>
 	    </select>
 	</td>
+  <td>
+    <input type="submit" value="Create"/>
+  </td>
   </tr></form>
   </table>
   <br>
-  <p>Use 'Enter' to submit a wonder.</p>
+</div>
 </div>
 </body>
 </html>
