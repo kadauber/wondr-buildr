@@ -4,7 +4,7 @@ header('Location: index.php');
 // MySQL server location and credentials
 $servername = "sql.mit.edu";
 $username = "kadauber";
-$password = "0012MOAIKate";
+$password = "racetoillumination";
 
 // Connect to the MySQL Server.
 try {
