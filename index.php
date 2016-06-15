@@ -78,7 +78,7 @@
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
 	    <select name="axiom">
-		<option value="Apocalypsi">Apocalypsi</option>
+		<option value="Apokalypsi">Apokalypsi</option>
 		<option value="Automata">Automata</option>
 		<option value="Epikrato">Epikrato</option>
 		<option value="Exelixi">Exelixi</option>
