@@ -10,7 +10,7 @@
     50%{
       opacity: 1;
       border-radius: 25px;
-      padding: 25px 50px;
+      padding: 20px 40px;
       max-height:100%;
     }
     100% {
@@ -76,7 +76,7 @@ div.wrapper{
   color: #b08020;
 }
 
-input[type=text], select {
+input[type=text], input[type=submit], select {
     width: 100%;
     border: 2px solid #704000;
     border-radius: 6px;
@@ -87,6 +87,22 @@ input[type=text], select {
     color: #503000;
 }
 
-input[type=text]:focus, select:focus {
+input[type=text]:focus, select:focus, input[type=submit]:hover, input[type=submit]:focus{
     background-color: #f0d0a0;
+}
+
+input[type=submit]:hover{
+  cursor: pointer;
+}
+
+a.textDelete, a.textEdit{
+  cursor: pointer;
+}
+
+a.textDelete:hover{
+  color : red;
+}
+
+a.textEdit:hover{
+  color : #ff9000;
 }
