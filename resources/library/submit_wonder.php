@@ -1,5 +1,5 @@
 <?php
-header('Location: index.php');
+header('Location: /wondr-buildr/index.php');
 
 // MySQL server location and credentials
 $servername = "sql.mit.edu";

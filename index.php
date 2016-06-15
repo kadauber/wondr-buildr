@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Wondr Buildr</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <div class="wrapper">
@@ -85,7 +85,7 @@
       function deleteWonder() {window.alert("Wonder Edited");}
     </script>
 
-    <form action="submit_wonder.php" method="post"><tr class="entry">
+    <form action="resources/library/submit_wonder.php" method="post"><tr class="entry">
 	<td><input type="text" name="name" placeholder="Name"></td>
 	<td><input type="text" name="owner" placeholder="Owner"></td>
 	<td>
