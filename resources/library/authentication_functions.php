@@ -47,4 +47,48 @@ function login($username, $password, $conn) {
     }
 }
 
+// Check whether a user is logged in by checking the user_id and login_string of SESSION
+function login_check($conn) {
+
+    // Check that session variables are set
+    if (isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
+	$user_id = $_SESSION['user_id'];
+	$login_string = $_SESSION['login_string'];
+	$username = $_SESSION['username'];
+
+	// Try to create a statement connected to the database
+        if ($statement->prepare("select Password from Users where ID = :user_id limit 1")) {
+
+	    // Bind the id of the allegedly logged in user to the query
+	    $statement->bindParam(':user_id', $user_id);
+	    $statement->execute();
+
+	    // Check that there is a user with that user_id
+	    if ($statement->rowCount() == 1) {
+
+		// Get the password hash of the user with that user id
+		$statement->setFetchMethod(PDO::FETCH_BOUND);
+		$statement->bindColumn('Password', $password);
+		$statement->fetch();
+		// Recreate the hash of the password hash and browser information
+		$login_check = hash('sha512', $password . $user_browser);
+
+		// Check that the session and recalculated hashes are the same
+		if (hash_equals($login_check, $login_string)) {
+		    // This user is logged in
+		    return true;
+		} else { // This user isn't logged in
+		    return false;
+		}
+
+	    } else { // session parameters not set
+		return false;
+            }
+        } else { // statement could not be prepared
+            return false;
+        }
+    } else { // session variables were  not set
+        return false;
+    }
+}
 ?>
