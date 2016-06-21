@@ -10,24 +10,6 @@
     <div class="fader">
     <h1>Wondr Buildr</h1>
     <p>Welcome to Wondr Buildr. Let's build some wonders.</p>
-    <?php
-        // MySQL server location and credentials
-        $servername = "sql.mit.edu";
-        $username = "kadauber";
-        $password = "racetoillumination";
-
-        // Connect to the MySQL Server.
-        try {
-
-            $conn = new PDO("mysql:host=$servername;dbname=kadauber+Wonders", $username, $password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-
-    ?>
 
     <table>
 	<tr>
@@ -38,6 +20,11 @@
 	</tr>
 
     <?php
+
+	include_once './resources/library/db_connect.php'; // Set $conn to a new connection
+
+
+	$conn = connect_to_database();
 
 	// Get existing wonders from database
 	$statement = $conn->prepare("select Name, Owner, Axiom, Rank from Wonders order by ID");
