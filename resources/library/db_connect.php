@@ -1,7 +1,5 @@
 <?php
-echo get_include_path();
-
-include_once 'resources/config.php'; // include this line during development
+require_once 'resources/config.php'; // include this line during development
 // include_once '~/web_scripts_config/config.php'; // include this line during production
 
 // Return a connection to the MySQL Server kadauber+Wonders database.
