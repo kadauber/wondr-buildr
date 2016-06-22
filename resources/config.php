@@ -3,6 +3,8 @@
  * When in production, this file should be moved to ~/web_scripts_config.php
  */
 
+set_include_path(".:");
+
 // Database login details
 define("DATABASE_HOST", "sql.mit.edu");
 define("USERNAME", "kadauber");

@@ -1,4 +1,6 @@
 <?php
+// IMPORTANT: Must require literal path to config.php first
+// in every reachable file in order to properly configure webpages
 require_once 'resources/config.php';
 require_once LIBRARY_PATH . "/template_functions.php";
 
