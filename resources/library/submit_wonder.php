@@ -25,8 +25,14 @@ if (isset($_POST['submit'])) {
     $axiom = $_POST['axiom'];
     $rank = $_POST['rank'];
 
+    // Sanitize user inputs by escaping them (also adds appropriate single quotes)
+    $name = $conn->quote($name);
+    $owner = $conn->quote($owner);
+    $axiom = $conn->quote($axiom);
+    $rank = $conn->quote($rank);
+
     // Submit a wonder through the connection
-    $statement = $conn->prepare("insert into Wonders (Name, Owner, Axiom, Rank) values ('{$name}','{$owner}','{$axiom}','{$rank}')");
+    $statement = $conn->prepare("insert into Wonders (Name, Owner, Axiom, Rank) values ({$name},{$owner},{$axiom},{$rank})");
     $statement->execute();
 }
 
