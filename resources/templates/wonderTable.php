@@ -13,7 +13,7 @@
 
     <?php
 
-	include_once './resources/library/db_connect.php'; // Set $conn to a new connection
+	include_once './resources/library/db_connect.php'; // import the connect_to_database function
 
 
 	$conn = connect_to_database();

@@ -47,7 +47,12 @@ function login($username, $password, $conn) {
     }
 }
 
-// Check whether a user is logged in by checking the user_id and login_string of SESSION
+// Check whether the user in $_SESSION['username] is logged in by checking the 
+// user_id and login_string of SESSION. SESSION['login-string'] is set on login
+// as the sha512 hash of the user's hashed password and the browser info. Matching
+// that hash against a rehash of the purportedly logged in user id's password hash
+// with the current browser information tells us whether that information is the
+// same as it was a the time the user with user id logged in.
 function login_check($conn) {
 
     // Check that session variables are set
